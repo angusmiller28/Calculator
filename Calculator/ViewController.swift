@@ -16,6 +16,7 @@ enum modes {
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var label: UILabel!
     var lableString:String = "0"
     var currentMode:modes = .not_set
     var savedNum:Int = 0
@@ -30,6 +31,22 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func didPressPlus(_ sender: AnyObject) {
+    }
+    
+    
+    @IBAction func didPressMinus(_ sender: AnyObject) {
+    }
+    @IBAction func didPressTimes(_ sender: AnyObject) {
+    }
+    @IBAction func didPressEquals(_ sender: AnyObject) {
+    }
+    @IBAction func didPressClear(_ sender: AnyObject) {
+    }
+    
+    @IBAction func didPressNumber(_ sender: UIButton) {
+    }
+    
     
     func updateText(){
         
