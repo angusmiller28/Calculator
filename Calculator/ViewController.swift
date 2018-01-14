@@ -42,6 +42,21 @@ class ViewController: UIViewController {
     @IBAction func didPressTimes(_ sender: Any) {
     }
     @IBAction func didPressEquals(_ sender: Any) {
+        guard let labelInt:Int = Int(labelString) else {
+            return
+        }
+        if (currentMode == .not_set || lastButtonWasMode){
+            return
+        }
+        if (currentMode == .addition){
+            savedNum += labelInt
+        } else if (currentMode == .subtraction){
+            savedNum -= labelInt
+        }
+        currentMode = .not_set
+        labelString = "\(savedNum)"
+        updateText()
+        lastButtonWasMode = true
     }
     @IBAction func didPressClear(_ sender: Any) {
         labelString = "0"
