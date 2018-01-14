@@ -31,11 +31,13 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func didPressPlus(_ sender: AnyObject) {
+    @IBAction func didPressPlus(_ sender: Any) {
+        changeMode(newMode: .addition)
     }
     
     
     @IBAction func didPressMinus(_ sender: Any) {
+        changeMode(newMode: .subtraction)
     }
     @IBAction func didPressTimes(_ sender: Any) {
     }
@@ -51,6 +53,12 @@ class ViewController: UIViewController {
     
     @IBAction func didPressNumber(_ sender: UIButton) {
         let stringValue:String? = sender.titleLabel?.text
+        
+        if (lastButtonWasMode){
+            lastButtonWasMode = false
+            labelString = "0"
+        }
+        
         labelString = labelString.appending(stringValue!)
         updateText()
     }
@@ -60,11 +68,20 @@ class ViewController: UIViewController {
         guard let labelInt:Int = Int(labelString) else {
             return
         }
+        if (currentMode == .not_set){
+            savedNum = labelInt
+        }
+        
         label.text = "\(labelInt)"
     }
 
     func changeMode(newMode:modes){
-        
+        if (savedNum == 0){
+            return
+        }
+                
+        currentMode = newMode
+        lastButtonWasMode = true
     }
 
 }

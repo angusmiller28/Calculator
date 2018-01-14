@@ -72,7 +72,6 @@
                                 </state>
                                 <connections>
                                     <action selector="didPressPlus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W3y-9I-sHM"/>
-                                    <action selector="didPressPluss:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ouk-e7-JRK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxK-1P-BeJ">
